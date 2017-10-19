@@ -38,4 +38,9 @@ public class Person {
 	public enum Gender {
 		MALE, FEMALE;
 	}
+	
+	@Override
+	public String toString() {
+		return "Name= " + name + "\nAge= " + age + "\nGender= " + gender;
+	}
 }
