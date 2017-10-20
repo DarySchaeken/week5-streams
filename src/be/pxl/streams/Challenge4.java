@@ -33,8 +33,11 @@ public class Challenge4 {
 		// persoon in de lijst
 		// en als leeftijd de som van alle leeftijden
 		// Maak gebruik van de methode .reduce()
-		Person nieuw = new Person(personen.stream().map(p -> p.getName().substring(0, 1)).reduce("", (a, b) -> a + b),
-				personen.stream().map(Person::getAge).reduce(0, (a, b) -> a + b), Gender.MALE);
+		Person nieuw = new Person(
+				personen.stream().map(p -> p.getName().substring(0, 1)).reduce("",
+						(accumulator, element) -> accumulator + element),
+				personen.stream().map(Person::getAge).reduce(0, (accumulator, element) -> accumulator + element),
+				Gender.MALE);
 		System.out.println(nieuw);
 	}
 }
