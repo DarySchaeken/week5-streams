@@ -12,20 +12,21 @@ public class Challenge4 {
 				new Person("Berend", 22, Gender.MALE), new Person("Aagje", 27, Gender.FEMALE));
 		// 1. Geef de gemiddelde leeftijd van alle personen
 		// Verwachte output: Gemiddelde leeftijd: 25.6
-		System.out.println(personen.stream().mapToInt((Person p) -> p.getAge()).average().getAsDouble());
+		System.out.println(
+				"Gemiddelde leeftijd: " + personen.stream().mapToInt((Person p) -> p.getAge()).average().getAsDouble());
 
 		// 2. Hoeveel mannen staan er in de lijst
 		// Verwachte output: Aantal mannen: 3
-		System.out.println(personen.stream().filter(p -> p.getGender() == Gender.MALE).count());
+		System.out.println("Aantal mannen: " + personen.stream().filter(p -> p.getGender() == Gender.MALE).count());
 
 		// 3. Hoeveel mannen ouder dan 24 staan er in de lijst
 		// Verwachte output: Aantal mannen boven 24: 2
-		System.out.println(
-				personen.stream().filter(p -> p.getGender() == Gender.MALE).filter(p -> p.getAge() > 24).count());
+		System.out.println("Aantal mannen boven 24: "
+				+ personen.stream().filter(p -> p.getGender() == Gender.MALE).filter(p -> p.getAge() > 24).count());
 
 		// 4. Geef de gemiddelde leeftijd van alle mannen
 		// Gemiddelde leeftijd mannen: 26.0
-		System.out.println(personen.stream().filter(p -> p.getGender() == Gender.MALE)
+		System.out.println("Gemiddelde leeftijd mannen: " + personen.stream().filter(p -> p.getGender() == Gender.MALE)
 				.mapToInt((Person p) -> p.getAge()).average().getAsDouble());
 
 		// 5. Maak een nieuwe persoon met als naam de eerste letter van iedere
